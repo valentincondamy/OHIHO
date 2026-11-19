@@ -36,7 +36,10 @@ export default function Navbar({
   const DROPDOWNS: Record<string, NavItem[]> = {
     "/#services": serviceLinks,
     "/#methode": methodLinks,
-    "/#portfolio": [{ href: "/bugtrack", label: "BugTrack" }],
+    "/#portfolio": [
+      { href: "/brume", label: "Brume" },
+      { href: "/bugtrack", label: "BugTrack" },
+    ],
   };
 
   const [scrolled, setScrolled] = useState(false);

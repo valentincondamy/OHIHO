@@ -26,7 +26,7 @@ function projectLinkProps(href?: string) {
 // ============================================================
 export default function Portfolio({ data }: { data: PortfolioContent }) {
   const featured = PROJECTS[0];
-  const satellite = PROJECTS[1];
+  const satellites = PROJECTS.slice(1, 3);
 
   return (
     <section
@@ -56,7 +56,11 @@ export default function Portfolio({ data }: { data: PortfolioContent }) {
             <div className="portfolio-editorial-copy">
               <span>Du concret, pas des promesses.</span>
               <h3>{data.title}</h3>
-              <p>{data.subtitle}</p>
+              <p>
+                Brume, Cadance Coaching et BugTrack sont des projets réels,
+                conçus, développés et mis en ligne. Un aperçu concret de ce
+                que nous pouvons construire pour vous.
+              </p>
               <Link href="/#contact" className="portfolio-editorial-cta">
                 {data.ctaButton}
                 <b aria-hidden="true">↗</b>
@@ -89,7 +93,7 @@ export default function Portfolio({ data }: { data: PortfolioContent }) {
                       >
                         <Image
                           src={featured.icon}
-                          alt=""
+                          alt={`Logo ${featured.title}`}
                           width={64}
                           height={64}
                         />
@@ -105,10 +109,11 @@ export default function Portfolio({ data }: { data: PortfolioContent }) {
                 </Link>
               )}
 
-              {satellite && (
+              {satellites.map((satellite, index) => (
                 <Link
+                  key={satellite.title}
                   {...projectLinkProps(satellite.href)}
-                  className="portfolio-orbit-satellite group"
+                  className={`portfolio-orbit-satellite portfolio-orbit-satellite--${index + 1} group`}
                   aria-label={`Découvrir ${satellite.title}`}
                 >
                   {satellite.icon && (
@@ -118,7 +123,7 @@ export default function Portfolio({ data }: { data: PortfolioContent }) {
                     >
                       <Image
                         src={satellite.icon}
-                        alt=""
+                        alt={`Logo ${satellite.title}`}
                         width={48}
                         height={48}
                       />
@@ -130,7 +135,7 @@ export default function Portfolio({ data }: { data: PortfolioContent }) {
                   </span>
                   <b aria-hidden="true">↗</b>
                 </Link>
-              )}
+              ))}
             </div>
           </Reveal>
         </div>
@@ -138,7 +143,7 @@ export default function Portfolio({ data }: { data: PortfolioContent }) {
         <Reveal delay={0.15}>
           <div className="portfolio-vivid-footer">
             <p>
-              <span>02</span>
+              <span>{String(PROJECTS.length).padStart(2, "0")}</span>
               {PROJECTS.length} projets livrés, d&apos;autres en cours.
             </p>
             <div>

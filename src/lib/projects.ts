@@ -23,6 +23,15 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    title: "Brume",
+    category: "Jeu vidéo web",
+    description:
+      "Prototype jouable d’un RPG de récolte isométrique : monde procédural, artisanat, combat, faune, inventaire et ambiance sonore. Une démonstration complète conçue et développée directement pour le navigateur.",
+    href: "/brume",
+    icon: "/realisations/brume-cover.png",
+    iconBg: "#243b2a",
+  },
+  {
     title: "Cadance Coaching",
     category: "Site vitrine",
     description:
