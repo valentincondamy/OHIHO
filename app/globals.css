@@ -1,0 +1,234 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@theme inline{--color-background:var(--background);--color-foreground:var(--foreground);--font-sans:Arial,Helvetica,sans-serif;--color-border:var(--border);--color-ring:#c2d0d8}
+:root,.dark{--background:#0b0e11;--foreground:#edece8;--border:#ffffff24;--primary:#edece8;--primary-foreground:#0b0e11;--muted:#171d22;--muted-foreground:#99a3aa;--radius:0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--background);color:var(--foreground);font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}a:focus-visible,button:focus-visible{outline:2px solid #f6a77e;outline-offset:7px}::selection{background:#df9974;color:#0b0e11}.scene{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 72% 46%,#26313d77,transparent 48%),#0b0e11}.scene canvas{display:block}.fallback{position:absolute;right:20%;top:24%;font-size:240px;color:#70859455}
+header{position:fixed;top:0;width:100%;height:112px;display:flex;align-items:center;justify-content:space-between;padding:0 4.2%;z-index:10;background:linear-gradient(#0b0e11bb,transparent)}.brand{font-size:32px;letter-spacing:-2px;font-weight:500}.brand sup{font-size:12px;letter-spacing:0;margin-left:5px}.byline{font:11px/1.6 monospace;letter-spacing:.1em;color:#9fa9b1;margin-right:auto;margin-left:48px}header>a:last-child{font-size:14px}
+section{position:relative;min-height:100svh;padding:150px 9% 120px;display:flex;align-items:center;z-index:2}.copy{width:min(49%,640px);position:relative}.eyebrow{font:12px/1.5 monospace;letter-spacing:.15em;color:#a7b2ba;margin:0 0 30px;display:flex;align-items:center;gap:10px}.eyebrow i{width:5px;height:5px;background:#e9ac86;border-radius:50%;box-shadow:0 0 12px #df977088}h1,h2{font-weight:400;letter-spacing:-.065em;line-height:1.04;margin:0 0 28px}h1{font-size:clamp(40px,4.7vw,76px)}h2{font-size:clamp(38px,4.5vw,70px)}em{font-family:Georgia,serif;font-weight:400;font-style:italic;letter-spacing:-.06em;color:#a8b6c2}.intro{font-size:16px;line-height:1.75;color:#aab3ba;margin:25px 0 32px}.link{font-size:14px;display:inline-flex;gap:52px;padding:14px 0;border-bottom:1px solid #6b767e}.link span{color:#e1a482}.link:hover{border-color:#e1a482}aside{position:absolute;bottom:15%;right:12%;font:11px/1.5 monospace;letter-spacing:.12em;color:#788994;text-align:center;pointer-events:none}aside small{display:block;margin-top:10px;font:12px Arial;letter-spacing:0;color:#8d9ca6}
+nav{position:fixed;right:32px;top:42%;z-index:12;display:flex;flex-direction:column;gap:18px}nav a{display:flex;justify-content:flex-end;gap:14px;font:12px monospace;color:#71818d}nav a[aria-current]{color:#ecac86}nav a span{opacity:1;transition:opacity .2s}nav a:hover span,nav a:focus span{opacity:1}
+.rows{margin-top:30px}.rows article{border-top:1px solid #ffffff24;display:flex;gap:20px;padding:20px 0}.rows label{font:12px monospace;color:#76838c;padding-top:3px}h3{font-size:18px;font-weight:500;margin:0 0 8px}h3 small{margin-left:15px;font:12px monospace;color:#93a2ad}.rows p,.projects p{font-size:14px;line-height:1.6;color:#a5b0b8;margin:0}.compact article{padding:13px 0}.compact h3{font-size:16px;margin-bottom:5px}.projects{display:grid;gap:24px;margin-top:34px}.projects article{padding:20px 0;border-top:1px solid #ffffff26}.projects article>span{font:10px monospace;color:#97a7b4;letter-spacing:.12em}.projects h3{font-size:29px;margin:12px 0}.projects small{display:block;font-size:12px;color:#798995;margin-top:12px}.pending{font-size:13px;color:#c8a48a;padding:12px 0}.promises{margin:28px 0;font-size:13px;color:#9eacb6}.promises p{display:flex;gap:15px;margin:12px 0}.promises b{color:#e8e8e5;min-width:95px;font-weight:400}
+footer{position:fixed;bottom:0;width:100%;padding:25px 4.2%;display:flex;align-items:center;justify-content:space-between;font:10px monospace;letter-spacing:.08em;color:#8f9aa3;z-index:12;background:linear-gradient(transparent,#0b0e11dd)}footer button{border:0;background:none;font-size:11px;letter-spacing:0}.count{display:flex;align-items:center;gap:15px}.count i{width:100px;height:1px;background:#3b4750}.count b{display:block;height:1px;background:#e1a482;transition:width .4s}
+.scene{background:radial-gradient(ellipse at 50% 50%,#26313d77,transparent 48%),#0b0e11}
+@media(min-width:761px){section{padding:140px 4.2% 110px}.copy{width:25vw;max-width:430px}h1,h2{font-size:clamp(30px,2.65vw,50px);letter-spacing:-.055em}.intro br{display:none}.eyebrow{margin-bottom:22px}.rows{margin-top:24px}.rows article{gap:12px;padding:16px 0}h3 small{display:block;margin:6px 0 0}.compact article{padding:12px 0}aside{left:35%;right:35%;bottom:14%}.promises p{display:block}.promises b{display:block;margin-bottom:5px}}
+@media(max-width:760px){header{height:84px;padding:0 24px}.brand{font-size:28px}.byline{display:none}header>a:last-child{font-size:12px}nav{right:12px;gap:15px;top:auto;bottom:96px}nav a span{display:block;opacity:1}section{padding:360px 26px 100px;min-height:100svh;align-items:flex-start}.copy{width:100%;max-width:550px;background:linear-gradient(#0b0e1100,#0b0e11ed 70px);padding-top:20px}h1,h2{font-size:44px}.eyebrow{margin-bottom:20px}.intro{font-size:15px}aside{top:295px;bottom:auto;left:0;right:0}aside small{display:none}.rows article{gap:13px}h3 small{display:block;margin:6px 0}.rows p{font-size:14px}footer{padding:20px 24px}footer>span:first-child{display:none}.promises p{display:block}.promises b{display:block;margin-bottom:5px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+.text-sequenced section .copy,.text-sequenced section aside{opacity:var(--caption-opacity,0);transition:opacity .12s linear}
+@media(min-width:761px){.text-sequenced section .copy{position:fixed;left:3%;top:50%;transform:translateY(-50%);width:24vw;max-height:calc(100svh - 230px);overflow-y:auto;scrollbar-width:thin;padding-right:8px}.text-sequenced section aside{position:fixed;bottom:14%;top:auto}.text-sequenced section{min-height:100svh}}
+
+html{scrollbar-width:none}html::-webkit-scrollbar{display:none}
+.text-sequenced section:not(:last-of-type){min-height:450svh}
+
+.offer-labels{position:fixed;left:50%;top:21%;transform:translateX(-50%);display:flex;justify-content:center;gap:clamp(24px,4vw,64px);font-size:clamp(16px,1.55vw,24px);letter-spacing:-.025em;white-space:nowrap;pointer-events:none}
+.text-sequenced .offer-labels{opacity:var(--caption-opacity,0);transition:opacity .12s linear}
+@media(max-width:760px){.offer-labels{top:105px;font-size:15px;gap:22px}}
+@media(prefers-reduced-motion:reduce){.offer-labels{position:absolute;top:110px}}
+
+.particle-offers .offer-labels{display:none}
+
+.contact-links{position:absolute;left:50%;top:calc(50% + 120px);transform:translateX(-50%);width:min(50vw,850px);display:grid;grid-template-columns:repeat(3,1fr);text-align:center;font-size:17px}.contact-links b{font-weight:400;margin-left:12px;color:#a8b6c2}.text-sequenced .contact-links{position:fixed;opacity:var(--caption-opacity,0);transition:opacity .12s linear}@media(max-width:760px){.contact-links{top:255px;width:95vw;font-size:14px}.contact-links b{margin-left:5px}}
+
+/* Keep the three label centers aligned with the projected 3D icon centers. */
+.contact-links{width:var(--contact-width,min(50vw,850px));top:var(--contact-top,calc(50% + 120px))}
+
+.contact-links b{margin-left:6px;color:inherit}
+
+.contact-links button{justify-self:center;display:flex;align-items:center;justify-content:center;gap:14px;width:132px;max-width:calc(100% - 12px);height:44px;padding:0 14px;border:1px solid #ffffff30;border-radius:8px;background:#ffffff09;color:#e1e5e8;font:inherit;font-size:14px;white-space:nowrap;transition:background .2s,border-color .2s}
+.contact-links button b{margin:0;color:#a8b6c2;font-weight:400}.contact-links button:hover{background:#ffffff12;border-color:#ffffff60}.contact-links button:focus-visible{outline:2px solid #a8b6c2;outline-offset:4px}
+@media(max-width:760px){.contact-links button{width:112px;gap:8px;padding:0 8px;font-size:13px}}
+
+@media(min-width:761px){
+ #offres .copy,.text-sequenced #offres .copy{width:18.5vw;max-width:310px;padding-right:0}
+ #offres h2{font-size:clamp(27px,2.3vw,42px);margin-bottom:20px}
+ #offres .eyebrow{margin-bottom:16px}
+ #offres .rows{margin-top:20px}
+ #offres .rows article{gap:9px;padding:13px 0}
+ #offres .rows article>div{min-width:0}
+ #offres h3{font-size:17px}
+ #offres .rows p{font-size:13px;line-height:1.5;overflow-wrap:break-word}
+}
+
+.text-sequenced #offres{min-height:450svh}
+
+
+/* Contact: a centered invitation and three equally spaced channels. */
+#contact .copy,.text-sequenced #contact .copy{position:fixed;left:50%;top:max(112px,calc(50% - 280px));transform:translateX(-50%);width:min(700px,85vw);max-height:none;overflow:visible;text-align:center;background:none;padding:0;pointer-events:none}
+#contact .eyebrow{justify-content:center;margin-bottom:18px;color:#999;font-size:10px;letter-spacing:.25em}
+#contact h2{font-size:clamp(36px,3.6vw,62px);line-height:1.02;letter-spacing:-.055em;margin:0}
+#contact h2 em{color:#e4e4e4}
+.contact-links button{width:172px;height:48px;border-radius:24px;border-color:#ffffff35;background:transparent;color:#eee;font-size:13px;justify-content:space-between;padding:0 20px;gap:12px}
+.contact-links button b{color:#eee;font-size:18px;transition:transform .2s}
+.contact-links button:hover{background:#ffffff0c;border-color:#aaa}
+.contact-links button:hover b{transform:translate(2px,-2px)}
+@media(max-width:760px){#contact .copy,.text-sequenced #contact .copy{top:102px;width:90vw}#contact h2{font-size:36px}#contact .eyebrow{margin-bottom:10px}.contact-links button{width:105px;height:40px;font-size:11px;padding:0 11px;gap:5px}.contact-links button b{font-size:15px}}
+@media(min-width:761px) and (max-height:700px){#contact .copy,.text-sequenced #contact .copy{top:100px}#contact h2{font-size:36px}#contact .eyebrow{margin-bottom:10px}}
+
+/* The opening scene gives the particle wordmark its own uninterrupted space. */
+#accueil .hero-copy,.text-sequenced #accueil .hero-copy{position:fixed;left:7%;right:7%;top:auto;bottom:115px;transform:none;width:auto;max-width:none;max-height:none;overflow:visible;padding:28px 0 0;background:none;border-top:1px solid #ffffff24;display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:50px}
+#accueil .eyebrow{font-size:10px;color:#999;letter-spacing:.19em;margin-bottom:17px}
+#accueil h1{font-size:clamp(36px,3vw,55px);line-height:1.02;letter-spacing:-.055em;margin:0}
+#accueil h1 em{color:#ddd}
+.hero-details{justify-self:end;max-width:420px}
+#accueil .intro{font-size:15px;line-height:1.75;color:#aaa;margin:0 0 17px}
+#accueil .intro br{display:block}
+#accueil .link{font-size:12px;border-color:#555;padding:10px 0;gap:45px}
+#accueil .link span{color:#eee}
+@media(min-width:761px) and (max-height:800px){#accueil .hero-copy,.text-sequenced #accueil .hero-copy{bottom:77px;padding-top:17px}#accueil h1{font-size:34px}#accueil .intro{font-size:13px;margin-bottom:7px}#accueil .eyebrow{margin-bottom:10px}}
+@media(max-width:760px){#accueil .hero-copy,.text-sequenced #accueil .hero-copy{left:26px;right:26px;top:330px;bottom:auto;display:block;border-top:1px solid #ffffff24;padding-top:20px;max-height:calc(100svh - 415px);overflow-y:auto}#accueil h1{font-size:37px}#accueil h1 br{display:none}#accueil h1 em{margin-left:9px}.hero-details{margin-top:20px}#accueil .intro{font-size:13px;line-height:1.65}#accueil .eyebrow{font-size:9px;margin-bottom:13px}}
+
+/* Living material: the opening wordmark leads the composition. */
+#accueil .hero-copy,.text-sequenced #accueil .hero-copy{left:10%;right:10%;top:auto;bottom:100px;display:flex;flex-direction:column;align-items:center;gap:16px;border:0;padding:0;text-align:center;max-height:none;overflow:visible}
+#accueil .eyebrow{margin:0;font-size:9px;letter-spacing:.28em;justify-content:center;color:#888}
+#accueil h1{font-size:clamp(25px,2.5vw,42px);line-height:1.12;font-weight:400}
+#accueil h1 br{display:none}#accueil h1 em{margin-left:.25em;color:#ddd}
+#accueil .link{margin-top:4px;font-size:11px;gap:20px;border:0;color:#aaa}
+@media(max-width:760px){#accueil .hero-copy,.text-sequenced #accueil .hero-copy{top:auto;bottom:115px;gap:18px}#accueil h1{font-size:29px}#accueil h1 br{display:block}#accueil h1 em{margin:0}#accueil .eyebrow{font-size:8px}}
+@media(min-width:761px) and (max-height:800px){#accueil .hero-copy,.text-sequenced #accueil .hero-copy{bottom:80px;gap:10px}#accueil h1{font-size:28px}}
+
+/* Keep the destination visible while the scene changes. */
+footer .count{display:flex;align-items:center;gap:15px}.journey-label{min-width:150px;text-align:right;color:#ccc}footer .count i b{transition:none}
+@media(max-width:760px){.journey-label{min-width:0;font-size:9px}footer .count{gap:8px}}
+
+/* Character reveal preserves the original text and line wrapping for assistive readers. */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.reveal-word{display:inline-block;white-space:nowrap}.reveal-char{opacity:0}.text-revealed .reveal-char{animation:text-signal .16s both;animation-delay:var(--reveal-delay)}
+@keyframes text-signal{0%{opacity:0}25%{opacity:1}45%{opacity:.2}70%,100%{opacity:1}}
+footer .sound-toggle{font:10px monospace;color:#aaa;margin-right:20px;white-space:nowrap}
+@media(prefers-reduced-motion:reduce){.reveal-char{opacity:1;animation:none!important}}
+
+footer .sound-toggle{display:inline-flex;align-items:center;gap:10px;padding:5px 0;border:0;background:none;color:#eee;font-family:monospace;font-size:13px;font-weight:600;letter-spacing:.02em;line-height:1;transition:opacity .2s}footer .sound-toggle:hover{opacity:.7}footer .sound-toggle svg{flex:none}@media(max-width:760px){footer .sound-toggle{font-size:11px;gap:7px;margin-right:8px}footer .sound-toggle svg{width:18px;height:18px}}
+
+/* Native browser scrolling. The scene only reads scroll position. */
+html{scroll-behavior:auto;scrollbar-width:auto}html::-webkit-scrollbar,body::-webkit-scrollbar{display:block;width:10px}body{touch-action:auto}
+
+.loop-tail{height:450svh;pointer-events:none}
+
+/* A clear professional introduction above two particle interfaces. */
+#accueil .hero-copy,.text-sequenced #accueil .hero-copy{top:clamp(125px,12vh,180px);bottom:auto;left:5%;right:5%;gap:18px}
+#accueil h1{font-size:clamp(38px,4.3vw,72px);line-height:1.02;letter-spacing:-.055em}#accueil h1 br{display:block}#accueil h1 em{margin:0;color:#bcbcbc}
+#accueil .hero-description{font-size:14px;line-height:1.7;color:#aaa;margin:0;max-width:600px}.hero-actions{display:flex;align-items:center;gap:28px;margin-top:2px;font-size:12px}.hero-primary{background:#e8e8e8;color:#101010;padding:13px 19px;border-radius:4px}.hero-actions a{display:inline-flex;align-items:center;gap:20px}.hero-secondary{color:#ddd;padding:12px 0;border-bottom:1px solid #555}
+@media(max-width:760px){#accueil .hero-copy,.text-sequenced #accueil .hero-copy{top:120px;gap:16px}#accueil h1{font-size:36px}#accueil .eyebrow{font-size:8px}#accueil .hero-description{font-size:12px;max-width:330px}.hero-actions{gap:18px;font-size:11px}.hero-primary{padding:11px 13px}}
+@media(min-width:761px) and (max-height:800px){#accueil .hero-copy,.text-sequenced #accueil .hero-copy{top:112px;gap:12px}#accueil h1{font-size:42px}#accueil .hero-description{font-size:12px}}
+
+/* A centered particle wordmark gets the full width of the opening composition. */
+#accueil .hero-copy,.text-sequenced #accueil .hero-copy{position:fixed;inset:0;transform:none;width:100%;max-width:none;max-height:none;padding:0;display:block;text-align:center;pointer-events:none}
+#accueil .hero-heading{position:absolute;top:16%;left:5%;right:5%}
+#accueil .eyebrow{justify-content:center;font-size:9px;letter-spacing:.2em;color:#999;margin:0 0 20px}
+#accueil h1{font-size:clamp(30px,3.2vw,52px);line-height:1.08;letter-spacing:-.045em;margin:0}#accueil h1 em{color:#b8b8b8}
+#accueil .hero-caption{position:absolute;top:68%;left:5%;right:5%;display:flex;flex-direction:column;align-items:center;gap:25px}
+#accueil .hero-description{font-size:14px;line-height:1.65;color:#aaa;margin:0}
+#accueil .hero-actions{pointer-events:auto;display:flex;gap:35px;margin:0;font-size:12px}
+#accueil .hero-primary{background:#ededed;color:#141414;border-radius:30px;padding:14px 23px;gap:28px}
+#accueil .hero-secondary{border:0;color:#bbb;padding:14px 0;gap:18px}
+@media(max-width:760px){#accueil .hero-heading{top:125px;left:20px;right:20px}#accueil .eyebrow{font-size:8px;letter-spacing:.08em;margin-bottom:18px}#accueil h1{font-size:30px}#accueil .hero-caption{top:66%;gap:20px}#accueil .hero-description{font-size:12px}#accueil .hero-actions{font-size:10px;gap:22px}#accueil .hero-primary{padding:12px 17px;gap:16px}}
+@media(min-width:761px) and (max-height:760px){#accueil .hero-heading{top:17%}#accueil h1{font-size:34px}#accueil .eyebrow{margin-bottom:13px}#accueil .hero-caption{top:69%;gap:17px}#accueil .hero-description{font-size:12px}}
+
+/* The white wordmark is the primary focal point. */
+#accueil h1{font-size:clamp(27px,2.5vw,40px)}
+#accueil .hero-heading{top:19%}
+#accueil .hero-caption{top:71%}
+@media(max-width:760px){#accueil .hero-heading{top:125px}#accueil h1{font-size:28px}#accueil .hero-caption{top:66%}}
+
+/* Responsive hardening: narrow phones, foldables, split-screen and landscape. */
+:root{--safe-top:env(safe-area-inset-top,0px);--safe-right:env(safe-area-inset-right,0px);--safe-bottom:env(safe-area-inset-bottom,0px);--safe-left:env(safe-area-inset-left,0px)}
+html,body{min-width:0;max-width:100%;overflow-x:hidden}body{overscroll-behavior-x:none}
+header{padding-left:max(24px,calc(4.2% + var(--safe-left)));padding-right:max(24px,calc(4.2% + var(--safe-right)))}
+footer{padding-left:max(24px,calc(4.2% + var(--safe-left)));padding-right:max(24px,calc(4.2% + var(--safe-right)));padding-bottom:max(20px,calc(20px + var(--safe-bottom)))}
+nav{right:max(20px,calc(32px + var(--safe-right)))}
+
+@media (max-width:900px){
+  header{height:clamp(68px,11vw,92px);padding-top:var(--safe-top)}
+  .brand{font-size:clamp(25px,5.6vw,32px)}
+  .byline{display:none}
+  header>a:last-child{max-width:42vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:clamp(10px,2.4vw,13px)}
+  nav{top:auto;right:max(12px,calc(16px + var(--safe-right)));bottom:calc(82px + var(--safe-bottom));gap:clamp(9px,2.5vw,18px)}
+  nav a{gap:clamp(7px,2vw,13px);font-size:clamp(9px,2.2vw,12px);white-space:nowrap}
+  nav a span{display:block;opacity:1}
+  section{min-height:100svh;padding:clamp(112px,18svh,220px) max(22px,6vw) calc(98px + var(--safe-bottom));align-items:flex-start}
+  .copy{width:100%;max-width:none;min-width:0;padding-top:18px}
+  h1,h2{font-size:clamp(32px,8.5vw,54px);overflow-wrap:break-word}
+  .eyebrow{font-size:clamp(9px,2vw,12px);letter-spacing:.12em}
+  .rows article{min-width:0;gap:clamp(10px,3vw,16px)}
+  .rows article>div{min-width:0}
+  h3{font-size:clamp(16px,4.2vw,19px)}
+  h3 small{font-size:clamp(10px,2.8vw,12px);margin-left:0}
+  .rows p,.projects p{font-size:clamp(12px,3.3vw,14px);line-height:1.55}
+  .projects{gap:16px;margin-top:24px}
+  .projects h3{font-size:clamp(24px,6vw,30px)}
+  aside{top:clamp(112px,24svh,290px);left:8px;right:8px}
+  .offer-labels{top:clamp(94px,14svh,150px);width:calc(100% - 36px);gap:clamp(12px,4vw,28px);font-size:clamp(12px,3.6vw,17px);white-space:normal;text-align:center}
+  .contact-links{width:min(92vw,620px);gap:clamp(6px,2vw,16px);font-size:clamp(11px,3.2vw,14px)}
+  .contact-links button{min-width:0;width:100%;padding-inline:clamp(7px,2.5vw,14px);gap:6px;font-size:inherit}
+  #contact .copy,.text-sequenced #contact .copy{top:clamp(96px,13svh,150px);width:min(92vw,620px)}
+  #contact h2{font-size:clamp(30px,8vw,48px)}
+  #accueil .hero-heading{top:clamp(100px,15svh,160px);left:max(20px,6vw);right:max(20px,6vw)}
+  #accueil h1{font-size:clamp(27px,7.8vw,42px)}
+  #accueil .hero-caption{top:clamp(58%,66svh,73%);left:max(20px,6vw);right:max(20px,6vw);gap:clamp(14px,4vw,24px)}
+  #accueil .hero-description{font-size:clamp(11px,3.1vw,14px);max-width:38ch}
+  #accueil .hero-actions{gap:clamp(14px,5vw,28px);font-size:clamp(10px,2.8vw,12px)}
+  #accueil .hero-primary{padding:clamp(10px,3vw,14px) clamp(13px,4vw,22px)}
+  footer{padding-top:14px;font-size:clamp(8px,2vw,10px)}
+  footer .count{gap:clamp(6px,2vw,12px);max-width:48vw}
+  footer .count i{width:clamp(45px,14vw,100px)}
+  footer button{font-size:clamp(9px,2.2vw,11px);max-width:35vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+}
+
+@media (max-width:380px){
+  header{padding-left:18px;padding-right:18px}
+  header>a:last-child{max-width:38vw}
+  nav{right:9px;bottom:calc(76px + var(--safe-bottom));gap:8px}
+  nav a{gap:5px;font-size:9px}
+  section{padding-left:18px;padding-right:18px}
+  #accueil .hero-heading{left:18px;right:18px}
+  #accueil .hero-caption{left:18px;right:18px}
+  .contact-links{width:96vw;gap:3px}
+  .contact-links button{height:38px;font-size:10px;padding-inline:5px}
+  footer{padding-left:18px;padding-right:18px}
+  footer button{max-width:31vw}
+}
+
+/* On touch devices, each long scroll section needs a stable reading surface.
+   The section itself remains tall for the particle journey, while its copy
+   stays centered and readable during the transition. */
+@media (max-width:900px) and (orientation:portrait){
+  .text-sequenced section:not(:last-of-type){min-height:300svh}
+  .text-sequenced section .copy{position:fixed;left:max(18px,6vw);right:max(18px,6vw);top:50%;transform:translateY(-50%);width:auto;max-width:none;max-height:calc(100svh - 210px);overflow-y:auto;overscroll-behavior:contain;padding:18px 0 24px;background:linear-gradient(180deg,#0b0e1100,#0b0e11ee 18%,#0b0e11ee 82%,#0b0e1100);scrollbar-width:none}
+  .text-sequenced section .copy::-webkit-scrollbar{display:none}
+  .text-sequenced section aside{position:fixed;top:auto;bottom:calc(22% + var(--safe-bottom));left:18px;right:18px}
+  .text-sequenced #offres .copy,.text-sequenced #methode .copy,.text-sequenced #projets .copy{top:48%;}
+  .text-sequenced #offres h2,.text-sequenced #methode h2,.text-sequenced #projets h2{font-size:clamp(30px,8vw,46px);margin-bottom:20px}
+  .text-sequenced #offres .rows,.text-sequenced #methode .rows{margin-top:12px}
+  .text-sequenced #offres .rows article,.text-sequenced #methode .rows article{padding:12px 0}
+  .text-sequenced #projets .projects{margin-top:14px;gap:12px}
+}
+
+@media (max-width:900px) and (orientation:landscape){
+  .text-sequenced section:not(:last-of-type){min-height:260svh}
+  .text-sequenced section .copy{position:fixed;left:5vw;right:28vw;top:50%;transform:translateY(-50%);width:auto;max-width:560px;max-height:calc(100svh - 116px);overflow-y:auto;padding:12px 0 18px;background:linear-gradient(180deg,#0b0e1100,#0b0e11ee 18%,#0b0e11ee 82%,#0b0e1100);scrollbar-width:none}
+  .text-sequenced section .copy::-webkit-scrollbar{display:none}
+  .text-sequenced #offres h2,.text-sequenced #methode h2,.text-sequenced #projets h2{font-size:clamp(26px,5vw,38px);margin-bottom:12px}
+  .text-sequenced #offres .rows,.text-sequenced #methode .rows{margin-top:8px}
+  .text-sequenced #offres .rows article,.text-sequenced #methode .rows article{padding:8px 0}
+}
+
+@media (orientation:landscape) and (max-height:600px){
+  header{height:60px;padding-top:var(--safe-top)}
+  nav{top:auto;bottom:calc(58px + var(--safe-bottom));right:max(12px,calc(18px + var(--safe-right)));gap:8px}
+  nav a{font-size:9px;gap:6px}
+  section{min-height:100svh;padding:82px max(20px,5vw) calc(72px + var(--safe-bottom));align-items:flex-start}
+  #accueil .hero-heading{top:74px}
+  #accueil h1{font-size:clamp(24px,5vw,36px)}
+  #accueil .hero-caption{top:58%;gap:10px}
+  #accueil .hero-description{font-size:11px}
+  #contact .copy,.text-sequenced #contact .copy{top:76px}
+  #contact h2{font-size:clamp(26px,5vw,38px)}
+  .offer-labels{top:72px;font-size:12px}
+  .contact-links{top:calc(50% + 30px);width:min(88vw,620px)}
+  footer{padding-top:10px;padding-bottom:max(10px,calc(10px + var(--safe-bottom)))}
+}
+
+@media (min-width:901px) and (max-width:1200px){
+  header{padding-left:4%;padding-right:4%}
+  nav{right:22px}
+  .text-sequenced section .copy{width:min(29vw,360px);left:4%}
+}

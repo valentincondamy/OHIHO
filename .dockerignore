@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+work
+.git
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+next-env.d.ts
+OHIHO-plan-v1.md

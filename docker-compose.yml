@@ -1,0 +1,30 @@
+# ============================================================
+# DOCKER COMPOSE DE PRODUCTION, ohiho.fr (refonte 2026-09) sur le VPS OVH.
+#
+# Caddy est installé directement sur le serveur et détient 80/443 : on ne
+# lance pas de Caddy ici, on ajoute un bloc au /etc/caddy/Caddyfile qui
+# renvoie vers 127.0.0.1:APP_PORT.
+#
+# Variables lues dans le .env de ce dossier : APP_NAME, APP_PORT.
+# ============================================================
+services:
+  app:
+    build:
+      context: .
+    container_name: ${APP_NAME:-ohiho-v2}-app
+    env_file: .env
+    restart: unless-stopped
+    ports:
+      # "127.0.0.1:" indispensable : le port n'est joignable que par le Caddy local.
+      - "127.0.0.1:${APP_PORT:-3007}:3000"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
